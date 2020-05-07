@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:scss": "node-sass --output-style compressed src/styles -o dist/styles",
-    "watch:scss": "onchange -v \"src/styles/*.scss\" -- npm run build:scss",
+    "build:scss": "node-sass --output-style compact src/styles -o dist/styles",
+    "watch:scss": "onchange -v \"src/styles\" -- npm run build:scss",
     "start": "browser-sync -s -w",
     "watch:all": "parallelshell \"npm start\" \"npm run watch:scss\""
   },
