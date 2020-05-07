@@ -3,7 +3,7 @@ $list-flex-basis: 40%;
 
 $menu-list-width: 50vw;
 $menu-list-padding-left: 5vw;
-$menu-list-bgc: rgba(255, 255, 255, .85);
+$menu-list-bgc: rgba(255, 255, 255, .95);
 
 $menu-item-padding: 10px 0;
 $menu-item-color: #061101;
@@ -26,14 +26,20 @@ $menu-item-text-transform: none;
         right: -$menu-list-width;
         width: $menu-list-width;
         height: 100vh;
-        padding-top: $navigation-height;
-        padding-left: $menu-list-padding-left;
+        padding-top: $navigation-height;  
         background-color: $menu-list-bgc;
         list-style: none;
+        border-left: 1px solid $bg-color-2;
         z-index: 99;
         transition: 0.5s;
         &--hamburger-active {
             right: 0;
+        }
+        @media (min-width: 425px) {
+            width: $menu-list-width - 10vw;
+        }
+        @media (min-width: 768px) {
+            width: $menu-list-width - 15vw;
         }
         @media (min-width: 1024px) {
             flex-basis: $list-flex-basis;
@@ -43,13 +49,21 @@ $menu-item-text-transform: none;
             width: auto;
             height: auto;
             margin: 0 15px;
-            padding: 0;
+            padding: 0 $menu-list-padding-left 0 0;
             background-color: transparent;
+            border-left: none;
+        }
+    }
+    &__item {
+        @media (min-width: 1024px) {
+            &:first-child {
+                display:none;
+            }
         }
     }
     &__link {
         display: block;
-        padding: $menu-item-padding;
+        padding: 25px 5vw;
         font-family: $menu-item-font-family;
         color: $menu-item-color;
         font-size: $menu-item-font-size;
@@ -57,6 +71,7 @@ $menu-item-text-transform: none;
         text-decoration: none;
         text-transform: $menu-item-text-transform;
         @media (min-width: 1024px) {
+            padding: $menu-item-padding;
             &:hover {
                 color: lighten($menu-item-color, 15%);
             }

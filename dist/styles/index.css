@@ -10,15 +10,22 @@ html, body { overflow-x: hidden; height: 100%; font-family: 'Roboto', sans-serif
 
 .menu { display: flex; justify-content: space-between; align-items: center; position: relative; height: 80px; }
 
-.menu__list { display: flex; flex-direction: column; position: fixed; top: 0; right: -50vw; width: 50vw; height: 100vh; padding-top: 80px; padding-left: 5vw; background-color: rgba(255, 255, 255, 0.85); list-style: none; z-index: 99; transition: 0.5s; }
+.menu__list { display: flex; flex-direction: column; position: fixed; top: 0; right: -50vw; width: 50vw; height: 100vh; padding-top: 80px; background-color: rgba(255, 255, 255, 0.95); list-style: none; border-left: 1px solid #D5D5D5; z-index: 99; transition: 0.5s; }
 
 .menu__list--hamburger-active { right: 0; }
 
-@media (min-width: 1024px) { .menu__list { flex-basis: 40%; flex-direction: row; justify-content: space-between; position: static; width: auto; height: auto; margin: 0 15px; padding: 0; background-color: transparent; } }
+@media (min-width: 425px) { .menu__list { width: 40vw; } }
 
-.menu__link { display: block; padding: 10px 0; font-family: "Roboto", sans-serif; color: #061101; font-size: 18px; font-weight: 400; text-decoration: none; text-transform: none; }
+@media (min-width: 768px) { .menu__list { width: 35vw; } }
 
-@media (min-width: 1024px) { .menu__link:hover { color: #205905; } }
+@media (min-width: 1024px) { .menu__list { flex-basis: 40%; flex-direction: row; justify-content: space-between; position: static; width: auto; height: auto; margin: 0 15px; padding: 0 5vw 0 0; background-color: transparent; border-left: none; } }
+
+@media (min-width: 1024px) { .menu__item:first-child { display: none; } }
+
+.menu__link { display: block; padding: 25px 5vw; font-family: "Roboto", sans-serif; color: #061101; font-size: 18px; font-weight: 400; text-decoration: none; text-transform: none; }
+
+@media (min-width: 1024px) { .menu__link { padding: 10px 0; }
+  .menu__link:hover { color: #205905; } }
 
 .menu__hamburger { z-index: 100; }
 
